@@ -51,7 +51,7 @@ async function main() {
     address: MOCKTEST_ADDR,
     abi: MOCKTEST_ABI,
     functionName: "setValue",
-    args: [1234n],
+    args: [2668n],
   });
   gasLimit += 30_000n; // overhead cho authorization payload
 
@@ -62,7 +62,7 @@ async function main() {
     type: "eip7702",
     chainId: sepolia.id,
     nonce: relayNonce,
-    to: eoaAccount.address, /*  tx gui toi EOA, EOA chi ki off chain */
+    to: eoaAccount.address, /*  EOa gia lap la contract tam thoi sau do EOA chi ki off chain de uy quyen */
     gas: gasLimit,
     maxFeePerGas,
     maxPriorityFeePerGas,
@@ -70,7 +70,7 @@ async function main() {
     data: encodeFunctionData({
       abi: MOCKTEST_ABI,
       functionName: "setValue",
-      args: [1234n],
+      args: [2668n],
     }),
     authorizationList: [
       {
