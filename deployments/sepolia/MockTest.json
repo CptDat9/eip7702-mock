@@ -1,0 +1,95 @@
+{
+  "address": "0x571D806987bB6579d80002d49274d25A216c31da",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "value",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x66d56ebe5fbf4c77bb9b1f51cf5b34e7ac6df1f4205d43518181b9a847687689",
+  "receipt": {
+    "to": null,
+    "from": "0x2D69c3C1d73A6dD1828726E0D727D1b21590c477",
+    "contractAddress": "0x571D806987bB6579d80002d49274d25A216c31da",
+    "transactionIndex": 1,
+    "gasUsed": "96001",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4bd9cdc67ac0ff4032f53ce1ba14ccc603da72c43573431315e20fa17c485bd4",
+    "transactionHash": "0x66d56ebe5fbf4c77bb9b1f51cf5b34e7ac6df1f4205d43518181b9a847687689",
+    "logs": [],
+    "blockNumber": 9161666,
+    "cumulativeGasUsed": "117001",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "59c40686d5c2af4af7eea288c0eef8ec",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"setValue\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"value\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Mock.sol\":\"MockTest\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/Mock.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\r\\npragma solidity ^0.8.24;\\r\\ncontract MockTest {\\r\\n    uint256 public value;\\r\\n    function setValue(uint256 _value) external {\\r\\n        value = _value;\\r\\n    }\\r\\n    function getValue() external view returns (uint256) {\\r\\n        return value;\\r\\n    }\\r\\n}\",\"keccak256\":\"0x64789ef8e27ed67bd578c8e220e872c50e57d20742c26afac51ffe5a745d6f4d\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x608080604052346100155760c5908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c90816320965255146073575080633fa4f24514605857635524107714603e57600080fd5b346055576020366003190112605557600435815580f35b80fd5b50346055578060031936011260555760209054604051908152f35b905034608b5781600319360112608b57602091548152f35b5080fdfea26469706673582212202b51e42bbe97cea0135784acfb35a8ca8ab65d6263e50db7fdbef81d7117609864736f6c63430008180033",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c90816320965255146073575080633fa4f24514605857635524107714603e57600080fd5b346055576020366003190112605557600435815580f35b80fd5b50346055578060031936011260555760209054604051908152f35b905034608b5781600319360112608b57602091548152f35b5080fdfea26469706673582212202b51e42bbe97cea0135784acfb35a8ca8ab65d6263e50db7fdbef81d7117609864736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/Mock.sol:MockTest",
+        "label": "value",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
