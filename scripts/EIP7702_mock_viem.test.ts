@@ -4,7 +4,7 @@ import { publicClient } from "./client";
 import { privateKeyToAccount, sign } from "viem/accounts";
 import "dotenv/config";
 
-const MOCKTEST_ADDR: Hex = "0x571D806987bB6579d80002d49274d25A216c31da"; //sepolia
+const MOCKTEST_ADDR: Hex = "0xE44f1384b06cce6dC044784f72cB175d490962E0"; //sepolia
 
 const MOCKTEST_ABI = [
   {
@@ -22,7 +22,9 @@ const MOCKTEST_ABI = [
     type: "function",
   },
 ] as const;
-
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 async function main() {
   // === Load account ===
   const EOA_PRIV = process.env.PAY_FROM_PRIV_KEY as Hex;
@@ -51,7 +53,7 @@ async function main() {
     address: MOCKTEST_ADDR,
     abi: MOCKTEST_ABI,
     functionName: "setValue",
-    args: [2668n],
+    args: [314n],
   });
   gasLimit += 30_000n; // overhead cho authorization payload
 
@@ -62,15 +64,18 @@ async function main() {
     type: "eip7702",
     chainId: sepolia.id,
     nonce: relayNonce,
-    to: eoaAccount.address, /*  EOa gia lap la contract tam thoi sau do EOA chi ki off chain de uy quyen */
+    // to: eoaAccount.address, 
+    to: MOCKTEST_ADDR,
     gas: gasLimit,
     maxFeePerGas,
     maxPriorityFeePerGas,
+    gasPrice: undefined,
+    maxFeePerBlobGas: undefined,
     value: 0n,
     data: encodeFunctionData({
       abi: MOCKTEST_ABI,
       functionName: "setValue",
-      args: [2668n],
+      args: [314n],
     }),
     authorizationList: [
       {
@@ -99,6 +104,7 @@ async function main() {
   console.log("RawTx:", signedTx);
   const sentHash = await publicClient.sendRawTransaction({ serializedTransaction: signedTx });
   console.log("Tx hash:", sentHash);
+    await sleep(15_000);
 
   const value = await publicClient.readContract({
     address: MOCKTEST_ADDR,

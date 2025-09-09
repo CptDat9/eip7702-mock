@@ -1,0 +1,37 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Mock.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.24;\r\ncontract MockTest {\r\n    \r\n    uint256 public value; //default: 0\r\n    struct Call {\r\n        address to;\r\n        uint256 value;\r\n        bytes data;\r\n    }\r\n\r\n    function setValue(uint256 _value) external {\r\n        value = _value;\r\n    }\r\n    function getValue() external view returns (uint256) {\r\n        return value;\r\n    }\r\n    function increaseValue(uint256 _value) external returns (uint256) {\r\n        value += _value;\r\n        return value;\r\n    }\r\n    function excuteCall(Call[] calldata calls) external {\r\n        for(uint256 i = 0; i < calls.length; i++){\r\n            (bool success, ) = calls[i].to.call{value: calls[i].value}(calls[i].data);\r\n            require(success, \"Multicall failed\");\r\n        }\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "viaIR": true,
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
