@@ -1,0 +1,37 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/helper/MulticallHelper.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.24;\r\ncontract MulticallHelper {\r\n    uint256 public nonce;\r\n    \r\n    struct Call {\r\n        address to;\r\n        uint256 value;\r\n        bytes data;\r\n    }\r\n    \r\n    event BatchExecuted(uint256 indexed nonce, Call[] calls);\r\n    event CallExecuted(\r\n        address indexed caller,\r\n        address indexed to,\r\n        uint256 value,\r\n        bytes data\r\n    );\r\n\r\n    function execute(Call[] calldata calls) external payable {\r\n        // require(msg.sender == address(this), \"Invalid authority\");\r\n        _executeBatch(calls);\r\n    }\r\n\r\n    function _executeBatch(Call[] calldata calls) internal {\r\n        uint256 currentNonce = nonce;\r\n        nonce++;\r\n\r\n        for (uint256 i = 0; i < calls.length; i++) {\r\n            _executeCall(calls[i]);\r\n        }\r\n\r\n        emit BatchExecuted(currentNonce, calls);\r\n    }\r\n\r\n    function _executeCall(Call calldata callItem) internal {\r\n        (bool success, bytes memory returnData) = callItem.to.call{value: callItem.value}(\r\n            callItem.data\r\n        );\r\n        require(success, _getRevertMsg(returnData));\r\n        emit CallExecuted(\r\n            msg.sender,\r\n            callItem.to,\r\n            callItem.value,\r\n            callItem.data\r\n        );\r\n    }\r\n    function _getRevertMsg(bytes memory returnData) internal pure returns (string memory ){\r\n        if(returnData.length < 68) return \"Call data reverted\";\r\n        assembly {\r\n            returnData := add(returnData, 0x04)\r\n        }\r\n        return abi.decode(returnData, (string));\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "viaIR": true,
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

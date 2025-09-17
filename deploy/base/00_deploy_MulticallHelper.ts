@@ -6,19 +6,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  console.log("Deploying MockTest with account:", deployer);
+  console.log("Deploying MulticallHelper with account:", deployer);
 
-  const deployment = await deploy("MockTest", {
+  const deployment = await deploy("MulticallHelper", {
     from: deployer,
     args: [], 
     log: true,
   });
 
-  console.log("MockTest deployed at:", deployment.address);
-  const mockTest = await ethers.getContractAt("MockTest", deployment.address);
-  const value = await mockTest.getValue();
-  console.log("Initial value:", value.toString());
+  console.log("Multicall helper deployed at:", deployment.address);
+//   const MulticallHelper = await ethers.getContractAt("MulticallHelper", deployment.address);
 };
 
 export default func;
-func.tags = ["MockTest"];
+func.tags = ["MulticallHelper"];

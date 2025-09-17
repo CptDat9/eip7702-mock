@@ -92,7 +92,6 @@ async function main() {
 
   const unsignedSerialized = serializeTransaction(tx);
   const txHash = keccak256(unsignedSerialized);
-
   const relaySig = await sign({ hash: txHash, privateKey: RELAY_PRIV });
   const signedTx: Hex = serializeTransaction({
     ...tx,

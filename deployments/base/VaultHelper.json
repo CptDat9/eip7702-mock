@@ -1,0 +1,69 @@
+{
+  "address": "0x82ef9da55A3806D44E48706214e020B37c1bAcBc",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "depositERC20",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb30c34e7c896c78781635610ed8b8e6b2dbdfd8635c4ea5d8d70fb34e4e61453",
+  "receipt": {
+    "to": null,
+    "from": "0x2D69c3C1d73A6dD1828726E0D727D1b21590c477",
+    "contractAddress": "0x82ef9da55A3806D44E48706214e020B37c1bAcBc",
+    "transactionIndex": 115,
+    "gasUsed": "202328",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3b6a18412cbfe3cb4614dbbd03f886f474759f2258cb08b40910a1f9f083dcfb",
+    "transactionHash": "0xb30c34e7c896c78781635610ed8b8e6b2dbdfd8635c4ea5d8d70fb34e4e61453",
+    "logs": [],
+    "blockNumber": 35344204,
+    "cumulativeGasUsed": "14544597",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "da2ed02fb8996cca6ba41e8efc099866",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"depositERC20\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/helper/VaultHelper.sol\":\"VaultHelper\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/helper/VaultHelper.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\r\\npragma solidity ^0.8.24;\\r\\ninterface IVault {\\r\\n    function deposit(\\r\\n        uint256 assets,\\r\\n        address receiver\\r\\n    ) external returns (uint256);\\r\\n}\\r\\ninterface IERC20 {\\r\\n    function transferFrom(\\r\\n        address from,\\r\\n        address to,\\r\\n        uint256 amount\\r\\n    ) external returns (bool);\\r\\n    function approve(address spender, uint256 amount) external returns (bool);   \\r\\n}\\r\\ncontract VaultHelper {\\r\\n    function depositERC20(\\r\\n        address token,\\r\\n        address vault, \\r\\n        uint256 amount,\\r\\n        address receiver\\r\\n    ) external {\\r\\n        require(IERC20(token).transferFrom(msg.sender, address(this), amount), \\\"Transfer token failed\\\");\\r\\n        require(IERC20(token).approve(vault, amount), \\\"Approve token failed\\\");\\r\\n        IVault(vault).deposit(amount, receiver);\\r\\n    }\\r\\n}\",\"keccak256\":\"0x96ca46cae33fcc985cafc75ad8fdebac34392fcfda6a11db37bbb1dd212f6165\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x60808060405234610016576102b1908161001c8239f35b600080fdfe608060409080825260048036101561001657600080fd5b600092833560e01c63aac3c17d1461002d57600080fd5b346102225760803660031901126102225781356001600160a01b038181169182900361021e57602493843582811680910361021a57604492833594606435918216809203610216576323b872dd60e01b895233848a015230888a015284890186905260209889816064818e865af190811561020c578b916101ef575b50156101b6578886868a8d8b51958694859363095ea7b360e01b85528a8c8601528401525af19081156101ac578a9161017f575b5015610147578794939291899187519889968795636e553f6560e01b87528601528401525af190811561013e5750610113578280f35b813d8311610137575b6101268183610226565b810103126101345738808280f35b80fd5b503d61011c565b513d85823e3d90fd5b855162461bcd60e51b815280840189905260148189015273105c1c1c9bdd99481d1bdad95b8819985a5b195960621b81860152606490fd5b61019f9150893d8b116101a5575b6101978183610226565b81019061025e565b386100dd565b503d61018d565b87513d8c823e3d90fd5b865162461bcd60e51b81528085018a90526015818a015274151c985b9cd9995c881d1bdad95b8819985a5b1959605a1b81870152606490fd5b61020691508a3d8c116101a5576101978183610226565b386100a9565b88513d8d823e3d90fd5b8980fd5b8780fd5b8580fd5b8380fd5b90601f8019910116810190811067ffffffffffffffff82111761024857604052565b634e487b7160e01b600052604160045260246000fd5b90816020910312610276575180151581036102765790565b600080fdfea2646970667358221220a9c9abe830a1642e1818702bcded9f697c0fb3d2751919d97642fe0d443eb0cd64736f6c63430008180033",
+  "deployedBytecode": "0x608060409080825260048036101561001657600080fd5b600092833560e01c63aac3c17d1461002d57600080fd5b346102225760803660031901126102225781356001600160a01b038181169182900361021e57602493843582811680910361021a57604492833594606435918216809203610216576323b872dd60e01b895233848a015230888a015284890186905260209889816064818e865af190811561020c578b916101ef575b50156101b6578886868a8d8b51958694859363095ea7b360e01b85528a8c8601528401525af19081156101ac578a9161017f575b5015610147578794939291899187519889968795636e553f6560e01b87528601528401525af190811561013e5750610113578280f35b813d8311610137575b6101268183610226565b810103126101345738808280f35b80fd5b503d61011c565b513d85823e3d90fd5b855162461bcd60e51b815280840189905260148189015273105c1c1c9bdd99481d1bdad95b8819985a5b195960621b81860152606490fd5b61019f9150893d8b116101a5575b6101978183610226565b81019061025e565b386100dd565b503d61018d565b87513d8c823e3d90fd5b865162461bcd60e51b81528085018a90526015818a015274151c985b9cd9995c881d1bdad95b8819985a5b1959605a1b81870152606490fd5b61020691508a3d8c116101a5576101978183610226565b386100a9565b88513d8d823e3d90fd5b8980fd5b8780fd5b8580fd5b8380fd5b90601f8019910116810190811067ffffffffffffffff82111761024857604052565b634e487b7160e01b600052604160045260246000fd5b90816020910312610276575180151581036102765790565b600080fdfea2646970667358221220a9c9abe830a1642e1818702bcded9f697c0fb3d2751919d97642fe0d443eb0cd64736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

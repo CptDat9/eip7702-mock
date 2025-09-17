@@ -1,0 +1,88 @@
+{
+  "address": "0xBee90abE6e504E15226E0fD2Cc5Abef6c0f40c6F",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "depositWithPermit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8f30c5e9a59e068c264d3b289a4749cb4bd2adf26243021c4b854b73a4703239",
+  "receipt": {
+    "to": null,
+    "from": "0x2D69c3C1d73A6dD1828726E0D727D1b21590c477",
+    "contractAddress": "0xBee90abE6e504E15226E0fD2Cc5Abef6c0f40c6F",
+    "transactionIndex": 43,
+    "gasUsed": "207532",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x103bcc98f96488beacba2bab9e5c0ac4b26b494424f630f050ec486822c032c6",
+    "transactionHash": "0x8f30c5e9a59e068c264d3b289a4749cb4bd2adf26243021c4b854b73a4703239",
+    "logs": [],
+    "blockNumber": 35328913,
+    "cumulativeGasUsed": "7140884",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 4,
+  "solcInputHash": "9fa55ab3f2d5061bb1c79f29ba5345b2",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"depositWithPermit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"depositWithPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Deposit v\\u00e0o Vault m\\u00e0 kh\\u00f4ng c\\u1ea7n approve tr\\u01b0\\u1edbc, d\\u00f9ng EIP-2612 permit\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SimpleCalibur.sol\":\"SimpleCalibur\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.4.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity >=0.4.16;\\n\\n/**\\n * @dev Interface of the ERC-20 standard as defined in the ERC.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the value of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the value of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets a `value` amount of tokens as the allowance of `spender` over the\\n     * caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from `from` to `to` using the\\n     * allowance mechanism. `value` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 value) external returns (bool);\\n}\\n\",\"keccak256\":\"0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.4.0) (token/ERC20/extensions/IERC20Permit.sol)\\n\\npragma solidity >=0.4.16;\\n\\n/**\\n * @dev Interface of the ERC-20 Permit extension allowing approvals to be made via signatures, as defined in\\n * https://eips.ethereum.org/EIPS/eip-2612[ERC-2612].\\n *\\n * Adds the {permit} method, which can be used to change an account's ERC-20 allowance (see {IERC20-allowance}) by\\n * presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\\n * need to send a transaction, and thus is not required to hold Ether at all.\\n *\\n * ==== Security Considerations\\n *\\n * There are two important considerations concerning the use of `permit`. The first is that a valid permit signature\\n * expresses an allowance, and it should not be assumed to convey additional meaning. In particular, it should not be\\n * considered as an intention to spend the allowance in any specific way. The second is that because permits have\\n * built-in replay protection and can be submitted by anyone, they can be frontrun. A protocol that uses permits should\\n * take this into consideration and allow a `permit` call to fail. Combining these two aspects, a pattern that may be\\n * generally recommended is:\\n *\\n * ```solidity\\n * function doThingWithPermit(..., uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) public {\\n *     try token.permit(msg.sender, address(this), value, deadline, v, r, s) {} catch {}\\n *     doThing(..., value);\\n * }\\n *\\n * function doThing(..., uint256 value) public {\\n *     token.safeTransferFrom(msg.sender, address(this), value);\\n *     ...\\n * }\\n * ```\\n *\\n * Observe that: 1) `msg.sender` is used as the owner, leaving no ambiguity as to the signer intent, and 2) the use of\\n * `try/catch` allows the permit to fail and makes the code tolerant to frontrunning. (See also\\n * {SafeERC20-safeTransferFrom}).\\n *\\n * Additionally, note that smart contract wallets (such as Argent or Safe) are not able to produce permit signatures, so\\n * contracts should have entry points that don't rely on permit.\\n */\\ninterface IERC20Permit {\\n    /**\\n     * @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\\n     * given ``owner``'s signed approval.\\n     *\\n     * IMPORTANT: The same issues {IERC20-approve} has related to transaction\\n     * ordering also apply here.\\n     *\\n     * Emits an {Approval} event.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     * - `deadline` must be a timestamp in the future.\\n     * - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\\n     * over the EIP712-formatted function arguments.\\n     * - the signature must use ``owner``'s current nonce (see {nonces}).\\n     *\\n     * For more information on the signature format, see the\\n     * https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\\n     * section].\\n     *\\n     * CAUTION: See Security Considerations above.\\n     */\\n    function permit(\\n        address owner,\\n        address spender,\\n        uint256 value,\\n        uint256 deadline,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n\\n    /**\\n     * @dev Returns the current nonce for `owner`. This value must be\\n     * included whenever a signature is generated for {permit}.\\n     *\\n     * Every successful call to {permit} increases ``owner``'s nonce by one. This\\n     * prevents a signature from being used multiple times.\\n     */\\n    function nonces(address owner) external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.\\n     */\\n    // solhint-disable-next-line func-name-mixedcase\\n    function DOMAIN_SEPARATOR() external view returns (bytes32);\\n}\\n\",\"keccak256\":\"0x2fa0657dd7b8bc75475a47f64bc04a9adb42236b15d65e6781594ea69a46c3e4\",\"license\":\"MIT\"},\"contracts/SimpleCalibur.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.24;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol\\\";\\r\\n\\r\\ninterface IVault {\\r\\n    function deposit(uint256 assets, address receiver) external returns (uint256 shares);\\r\\n}\\r\\n\\r\\ncontract SimpleCalibur {\\r\\n    /// @notice Deposit v\\u00e0o Vault m\\u00e0 kh\\u00f4ng c\\u1ea7n approve tr\\u01b0\\u1edbc, d\\u00f9ng EIP-2612 permit\\r\\n    function depositWithPermit(\\r\\n        address token,\\r\\n        address vault,\\r\\n        uint256 amount,\\r\\n        uint256 deadline,\\r\\n        uint8 v,\\r\\n        bytes32 r,\\r\\n        bytes32 s\\r\\n    ) external {\\r\\n        // 1. G\\u1ecdi permit \\u0111\\u1ec3 c\\u1ea5p allowance cho contract n\\u00e0y\\r\\n        IERC20Permit(token).permit(\\r\\n            msg.sender,       // ch\\u1ee7 s\\u1edf h\\u1eefu\\r\\n            address(this),    // spender (contract n\\u00e0y)\\r\\n            amount,           // s\\u1ed1 ti\\u1ec1n\\r\\n            deadline,         // h\\u1ea1n ch\\u00f3t ch\\u1eef k\\u00fd\\r\\n            v, r, s           // ch\\u1eef k\\u00fd\\r\\n        );\\r\\n\\r\\n        // 2. Transfer token t\\u1eeb EOA -> contract n\\u00e0y\\r\\n        IERC20(token).transferFrom(msg.sender, address(this), amount);\\r\\n\\r\\n        // 3. Approve l\\u1ea1i cho Vault\\r\\n        IERC20(token).approve(vault, amount);\\r\\n\\r\\n        // 4. G\\u1ecdi deposit v\\u00e0o Vault\\r\\n        IVault(vault).deposit(amount, msg.sender);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x43268d07dbed221571e2d85d665d2a1f3f7e2869b8d868f1bd1f9615dae4f73e\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60808060405234610016576102c9908161001c8239f35b600080fdfe608060409080825260048036101561001657600080fd5b600092833560e01c638ef597391461002d57600080fd5b3461023a5760e036600319011261023a576001600160a01b03823581811694919390859003610236576024938435908116809103610232576044359260843560ff811680910361022e57873b1561022e5763d505accf60e01b8252338483015230878301528460448301526064356064830152608482015260a43560a482015260c43560c4820152878160e481838b5af18015610224576101f7575b5083516323b872dd60e01b81523383820152308682015260448101849052602096889291888160648187865af180156101ed5791899185936101d0575b50604488518094819363095ea7b360e01b8352878a8401528a8d8401525af180156101c657916044939189969593610199575b5086519788958694636e553f6560e01b865285015233908401525af19081156101905750610165578280f35b813d8311610189575b610178818361023e565b810103126101865738808280f35b80fd5b503d61016e565b513d85823e3d90fd5b6101b890873d89116101bf575b6101b0818361023e565b810190610276565b5038610139565b503d6101a6565b86513d85823e3d90fd5b6101e690833d85116101bf576101b0818361023e565b5038610106565b87513d86823e3d90fd5b67ffffffffffffffff819892981161021257845295386100c9565b5060418592634e487b7160e01b835252fd5b85513d8a823e3d90fd5b8880fd5b8680fd5b8580fd5b8380fd5b90601f8019910116810190811067ffffffffffffffff82111761026057604052565b634e487b7160e01b600052604160045260246000fd5b9081602091031261028e5751801515810361028e5790565b600080fdfea264697066735822122005c288f70a7692fd3e3426cf3dac67f5416f5dd75ec6502bb2ea3ca24a34bc0c64736f6c63430008180033",
+  "deployedBytecode": "0x608060409080825260048036101561001657600080fd5b600092833560e01c638ef597391461002d57600080fd5b3461023a5760e036600319011261023a576001600160a01b03823581811694919390859003610236576024938435908116809103610232576044359260843560ff811680910361022e57873b1561022e5763d505accf60e01b8252338483015230878301528460448301526064356064830152608482015260a43560a482015260c43560c4820152878160e481838b5af18015610224576101f7575b5083516323b872dd60e01b81523383820152308682015260448101849052602096889291888160648187865af180156101ed5791899185936101d0575b50604488518094819363095ea7b360e01b8352878a8401528a8d8401525af180156101c657916044939189969593610199575b5086519788958694636e553f6560e01b865285015233908401525af19081156101905750610165578280f35b813d8311610189575b610178818361023e565b810103126101865738808280f35b80fd5b503d61016e565b513d85823e3d90fd5b6101b890873d89116101bf575b6101b0818361023e565b810190610276565b5038610139565b503d6101a6565b86513d85823e3d90fd5b6101e690833d85116101bf576101b0818361023e565b5038610106565b87513d86823e3d90fd5b67ffffffffffffffff819892981161021257845295386100c9565b5060418592634e487b7160e01b835252fd5b85513d8a823e3d90fd5b8880fd5b8680fd5b8580fd5b8380fd5b90601f8019910116810190811067ffffffffffffffff82111761026057604052565b634e487b7160e01b600052604160045260246000fd5b9081602091031261028e5751801515810361028e5790565b600080fdfea264697066735822122005c288f70a7692fd3e3426cf3dac67f5416f5dd75ec6502bb2ea3ca24a34bc0c64736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "depositWithPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+        "notice": "Deposit vào Vault mà không cần approve trước, dùng EIP-2612 permit"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "address": "0x79F76759252480EC87A102F333516C34A8146B0d",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct MulticallHelper.Call[]",
+          "name": "calls",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "BatchExecuted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "CallExecuted",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct MulticallHelper.Call[]",
+          "name": "calls",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "execute",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nonce",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd6b65254b4137efa1ccbad6cb33016fdd8bcf92f9eb81217f985dfdf5d4ed999",
+  "receipt": {
+    "to": null,
+    "from": "0x2D69c3C1d73A6dD1828726E0D727D1b21590c477",
+    "contractAddress": "0x79F76759252480EC87A102F333516C34A8146B0d",
+    "transactionIndex": 106,
+    "gasUsed": "337345",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa6570af1a9a73ab5c15666fbd24524a419447ff103fae41e79bda590f7e72bef",
+    "transactionHash": "0xd6b65254b4137efa1ccbad6cb33016fdd8bcf92f9eb81217f985dfdf5d4ed999",
+    "logs": [],
+    "blockNumber": 35644749,
+    "cumulativeGasUsed": "25961686",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 3,
+  "solcInputHash": "443aa4c3d4249e863dd04a15c64d7b40",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"indexed\":false,\"internalType\":\"struct MulticallHelper.Call[]\",\"name\":\"calls\",\"type\":\"tuple[]\"}],\"name\":\"BatchExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"CallExecuted\",\"type\":\"event\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct MulticallHelper.Call[]\",\"name\":\"calls\",\"type\":\"tuple[]\"}],\"name\":\"execute\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nonce\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/helper/MulticallHelper.sol\":\"MulticallHelper\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/helper/MulticallHelper.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\r\\npragma solidity ^0.8.24;\\r\\ncontract MulticallHelper {\\r\\n    uint256 public nonce;\\r\\n    \\r\\n    struct Call {\\r\\n        address to;\\r\\n        uint256 value;\\r\\n        bytes data;\\r\\n    }\\r\\n    \\r\\n    event BatchExecuted(uint256 indexed nonce, Call[] calls);\\r\\n    event CallExecuted(\\r\\n        address indexed caller,\\r\\n        address indexed to,\\r\\n        uint256 value,\\r\\n        bytes data\\r\\n    );\\r\\n\\r\\n    function execute(Call[] calldata calls) external payable {\\r\\n        // require(msg.sender == address(this), \\\"Invalid authority\\\");\\r\\n        _executeBatch(calls);\\r\\n    }\\r\\n\\r\\n    function _executeBatch(Call[] calldata calls) internal {\\r\\n        uint256 currentNonce = nonce;\\r\\n        nonce++;\\r\\n\\r\\n        for (uint256 i = 0; i < calls.length; i++) {\\r\\n            _executeCall(calls[i]);\\r\\n        }\\r\\n\\r\\n        emit BatchExecuted(currentNonce, calls);\\r\\n    }\\r\\n\\r\\n    function _executeCall(Call calldata callItem) internal {\\r\\n        (bool success, bytes memory returnData) = callItem.to.call{value: callItem.value}(\\r\\n            callItem.data\\r\\n        );\\r\\n        require(success, _getRevertMsg(returnData));\\r\\n        emit CallExecuted(\\r\\n            msg.sender,\\r\\n            callItem.to,\\r\\n            callItem.value,\\r\\n            callItem.data\\r\\n        );\\r\\n    }\\r\\n    function _getRevertMsg(bytes memory returnData) internal pure returns (string memory ){\\r\\n        if(returnData.length < 68) return \\\"Call data reverted\\\";\\r\\n        assembly {\\r\\n            returnData := add(returnData, 0x04)\\r\\n        }\\r\\n        return abi.decode(returnData, (string));\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x37d1bcbb7b2b6b31cacae54517f319974c3a963144d71fdf60cc2f5cb612dd35\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x6080806040523461001657610522908161001c8239f35b600080fdfe6080604052600436101561001257600080fd5b6000803560e01c9081633f707e6b1461003a575063affed0e01461003557600080fd5b61012c565b60203660031901126101295767ffffffffffffffff60043581811161012557366023820112156101255780600401359182116101255760059160243682851b840182011161012157845493600019851461010d5760018581018755913685900360821901875b8581106100e45788887f280bb3599696acbf79fb8ffcde81a57337b52500f789600fbb1cff9b4cbaba3960248a6100de8b6040519384930183610181565b0390a280f35b8281851b880101359082821215610109576101038487938a010161034d565b016100a0565b8980fd5b634e487b7160e01b86526011600452602486fd5b8480fd5b8280fd5b80fd5b3461014a57600036600319011261014a576020600054604051908152f35b600080fd5b6001600160a01b0381160361014a57565b908060209392818452848401376000828201840152601f01601f1916010190565b916020908082850183865252604091604085019460408360051b82010195856000925b8584106101b657505050505050505090565b9091929394959697603f198282030184528835605e198436030181121561014a57830160609080356101e78161014f565b6001600160a01b0316835280880135888401528981013536829003601e190181121561014a57019087823592019267ffffffffffffffff831161014a57823603841361014a576001938993838386958f6102449601520191610160565b9a0194019401929695949391906101a4565b356102608161014f565b90565b903590601e198136030182121561014a570180359067ffffffffffffffff821161014a5760200191813603831361014a57565b634e487b7160e01b600052604160045260246000fd5b604051906040820182811067ffffffffffffffff8211176102cc57604052565b610296565b6040519190601f01601f1916820167ffffffffffffffff8111838210176102cc57604052565b67ffffffffffffffff81116102cc57601f01601f191660200190565b60005b8381106103265750506000910152565b8181015183820152602001610316565b604090610260949281528160208201520191610160565b80356103588161014f565b6020820135906000806040850192846103718588610263565b9190826040519384928337810185815203925af13d1561044a576103b03d6103a061039b826102f7565b6102d1565b9081523d6000602083013e610450565b901561040c57506103eb7fed7e8f919df9cc0d0ad8b4057d084ebf319b630564d5da283e14751adc931f3a916103e585610256565b94610263565b909361040760405192839260018060a01b031696339684610336565b0390a3565b6044604051809262461bcd60e51b82526020600483015261043c8151809281602486015260208686019101610313565b601f01601f19168101030190fd5b6103b060605b60448151106104c15760048101518101906020816024840193031261014a5760248101519067ffffffffffffffff821161014a57018160438201121561014a5760248101516104a161039b826102f7565b928184526044828401011161014a57610260916044602085019101610313565b506104ca6102ac565b601281527110d85b1b0819185d18481c995d995c9d195960721b60208201529056fea26469706673582212203be12c443ba275d0ccf0ea9a9588bc7195764c1206ea40d0b230489b07ba84a164736f6c63430008180033",
+  "deployedBytecode": "0x6080604052600436101561001257600080fd5b6000803560e01c9081633f707e6b1461003a575063affed0e01461003557600080fd5b61012c565b60203660031901126101295767ffffffffffffffff60043581811161012557366023820112156101255780600401359182116101255760059160243682851b840182011161012157845493600019851461010d5760018581018755913685900360821901875b8581106100e45788887f280bb3599696acbf79fb8ffcde81a57337b52500f789600fbb1cff9b4cbaba3960248a6100de8b6040519384930183610181565b0390a280f35b8281851b880101359082821215610109576101038487938a010161034d565b016100a0565b8980fd5b634e487b7160e01b86526011600452602486fd5b8480fd5b8280fd5b80fd5b3461014a57600036600319011261014a576020600054604051908152f35b600080fd5b6001600160a01b0381160361014a57565b908060209392818452848401376000828201840152601f01601f1916010190565b916020908082850183865252604091604085019460408360051b82010195856000925b8584106101b657505050505050505090565b9091929394959697603f198282030184528835605e198436030181121561014a57830160609080356101e78161014f565b6001600160a01b0316835280880135888401528981013536829003601e190181121561014a57019087823592019267ffffffffffffffff831161014a57823603841361014a576001938993838386958f6102449601520191610160565b9a0194019401929695949391906101a4565b356102608161014f565b90565b903590601e198136030182121561014a570180359067ffffffffffffffff821161014a5760200191813603831361014a57565b634e487b7160e01b600052604160045260246000fd5b604051906040820182811067ffffffffffffffff8211176102cc57604052565b610296565b6040519190601f01601f1916820167ffffffffffffffff8111838210176102cc57604052565b67ffffffffffffffff81116102cc57601f01601f191660200190565b60005b8381106103265750506000910152565b8181015183820152602001610316565b604090610260949281528160208201520191610160565b80356103588161014f565b6020820135906000806040850192846103718588610263565b9190826040519384928337810185815203925af13d1561044a576103b03d6103a061039b826102f7565b6102d1565b9081523d6000602083013e610450565b901561040c57506103eb7fed7e8f919df9cc0d0ad8b4057d084ebf319b630564d5da283e14751adc931f3a916103e585610256565b94610263565b909361040760405192839260018060a01b031696339684610336565b0390a3565b6044604051809262461bcd60e51b82526020600483015261043c8151809281602486015260208686019101610313565b601f01601f19168101030190fd5b6103b060605b60448151106104c15760048101518101906020816024840193031261014a5760248101519067ffffffffffffffff821161014a57018160438201121561014a5760248101516104a161039b826102f7565b928184526044828401011161014a57610260916044602085019101610313565b506104ca6102ac565b601281527110d85b1b0819185d18481c995d995c9d195960721b60208201529056fea26469706673582212203be12c443ba275d0ccf0ea9a9588bc7195764c1206ea40d0b230489b07ba84a164736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/helper/MulticallHelper.sol:MulticallHelper",
+        "label": "nonce",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
